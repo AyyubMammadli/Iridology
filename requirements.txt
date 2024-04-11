@@ -1,0 +1,14 @@
+flask
+numpy
+Pillow
+scikit-image
+scikit-learn
+networkx
+opencv-python-headless
+matplotlib
+torch
+torch-scatter
+torch-sparse
+torch-cluster
+torch-spline-conv
+torch-geometric

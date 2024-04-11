@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Image Processing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Annapurna+SIL:wght@400;700&family=Anta&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nova+Round&family=Nova+Square&family=Original+Surfer&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Turret+Road:wght@200;300;400;500;700;800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+
+<div  class="top">
+    <h1 class="logo">
+        <img src="../static/images/ophthalmology.png" alt="">
+       <b>Diab</b>Eyes
+
+    </h1>
+   <button id="scanBtn"> scan eye </button>
+</div>
+<div class="slogan">
+    <div>
+
+        <h2>Eyes Reflect Your Health</h2>
+        <h3>Discover the Hidden Clues in Your Gaze   </h3>
+        <p class="sloganTxt">
+            <span> " DiabEyes "</span> 
+             is your comprehensive platform for proactive diabetes management. Using advanced algorithms and eye imaging technology, we empower individuals to predict their diabetes risk through a simple eye scan. Take control of your health with DiabEyes and stay ahead of potential health complications.
+            The eyes serve as crucial indicators for detecting signs of diabetes. Eye examinations and retinal imaging play a vital role in identifying the effects of diabetes on eye health.
+        
+        </p>
+    </div>
+        <!-- <img src="../static/images/medical-tools.png" alt=""> -->
+    <img src="../static/images/eye.png" alt="">
+</div>
+<div class="typeList">
+    <h3>Methods for observe and monitor diabetes</h3>
+    <ul>
+        <li><div><img src="../static/images/glucometer.png" alt=""></div>Blood sugar measurement</li>
+        <li><div><img src="../static/images/lab_1682052.png" alt=""></div>Urine tests</li>
+        <li><div><img src="../static/images/eye (1).png" alt=""></div>Eye examination</li>
+        <li><div><img src="../static/images/thermometer.png" alt=""></div>Signs and symptoms</li>
+    </ul>
+</div>
+
+<div class="info">   
+<h3>There are several different methods to observe and monitor diabetes:</h3>
+
+<ul>
+<li><img src="../static/images/medical-tools.png" alt="">
+   <p> <b>Blood sugar measurement:</b> One of the most common indicators of diabetes is changes in blood sugar levels. A glucometer can be used to measure a person's blood sugar level. This involves taking a drop of blood from the blood vessels. Various measurements are often taken, including fasting blood sugar (measured in a fasting state), postprandial blood sugar (measured 2 hours after a meal), and sometimes the HbA1c level (a test showing the average blood sugar level over 3 months).
+</p>
+</li>
+<li>
+  <p>  <b>Urine tests:</b> Some symptoms of diabetes can also be seen in urine. A person with glucose (sugar) in their urine may be at risk of diabetes. However, the presence of glucose in urine is not as accurate as blood tests for showing blood sugar levels.
+  </p>
+  <img src="../static/images/lab_1682052.png" alt="" srcset="">
+</li>
+<li>
+    <img src="../static/images/eye.png" alt="" srcset="">
+  <p>  <b>Eye examination:</b> In advanced stages of diabetes, significant changes can be observed in the eyes. A condition called diabetic retinopathy can cause damage to the retina (the eye's inner layer). Eye examination is important for early detection of such complications.
+</p>
+</li>
+<li>
+  <p>  <b> Signs and symptoms:</b> Symptoms of diabetes include excessive thirst, frequent urination, excessive hunger, weakness, blurred vision, and prolonged wound healing. If these symptoms are present, the person may be at risk of diabetes and should consult a healthcare professional.
+  </p>
+  <img src="../static/images/diabet1.png" alt="" srcset="">
+</li>
+
+</ul>
+    The monitoring and diagnosis of diabetes typically involve a combination of the above methods and can vary depending on an individual's condition and medical history. It is important to consult a healthcare professional for the most accurate information.
+    
+
+</div>
+<div id="bottom" class="lastSection">
+
+    <h1>Upload an Image</h1>
+    
+    <form action="/process_image" method="post" enctype="multipart/form-data">
+        <input type="text" placeholder="Enter your name">
+        <select name="" id="">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+       
+        <input  type="file" name="image">
+        <input class="submitBtn" type="submit" value="Submit">
+    </form>
+    <button id="scrollTop">
+        &#129033;
+    </button>
+</div>
+    </div>
+    <script>
+var scrollBottom=document.getElementById("scanBtn");
+var scrollTop=document.getElementById("scrollTop");
+scrollBottom.addEventListener("click",function(){
+    window.scrollTo({
+        top:document.body.scrollHeight,
+        behavior:"smooth"
+    })
+})
+scrollTop.addEventListener("click",function(){
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    })
+})
+    </script>
+</body>
+</html>
