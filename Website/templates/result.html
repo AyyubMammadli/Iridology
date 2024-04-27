@@ -7,78 +7,59 @@
     <title>Result</title>
 </head>
 <body>
-    <div  class="top">
+    <div class="top">
         <h1 class="logo">
             <img src="../static/images/ophthalmology.png" alt="">
-           <b>Diab</b>Eyes
+            <b>Diab</b>Eyes
         </h1>
     </div>
     <div class="result">
-    <h1>Your Prediction Result</h1>
-    <p>The prediction for the uploaded image is: {{ prediction }}</p>
+        <h1>Your Prediction Result</h1>
+        <p>The prediction for the uploaded image is: <span id="prediction"></span></p>
+        <p id="greeting"></p>
     </div>
     <div class="resultInfo">   
-        <h3>After being diagnosed with diabetes, it's important to take a series of measures to manage diabetes and maintain a healthy lifestyle. Here are some key points to consider for diabetes management:</h3>
-        
-        <ul>
-        <li><img src="../static/images/exercise.png" alt="">
-           <p> <b>Regular Exercise: </b>
-            Physical activity can help control blood sugar levels. Aim for at least 150 minutes of moderate aerobic exercise per week. Exercise can lower blood sugar and increase insulin sensitivity.
-        </p>
-        </li>
-        <li>
-          <p>  <b>Healthy Eating:</b> 
-            A balanced diabetes diet can help keep blood sugar levels in check. Consume high-fiber foods, whole grains, vegetables, fruits, and healthy fats. Also, avoid processed sugars and high-carb foods.
-          </p>
-          <img src="../static/images/eating.png" alt="" srcset="">
-        </li>
-        <li>
-            <img src="../static/images/glucometer.png" alt="" srcset="">
-          <p>  <b>Monitoring Blood Sugar: </b>
-            Regularly monitor blood sugar levels. This helps you track the effectiveness of your treatment and make adjustments if necessary. Check your blood sugar levels as often as recommended by your doctor.
-        </p>
-        </li>
-        <li>
-          <p>  <b> Consistent Use of Medications and Insulin: </b> 
-            Take prescribed medications and/or insulin regularly. Not missing doses helps keep blood sugar levels in check.
-          </p>
-          <img src="../static/images/medical-tools.png" alt="" srcset="">
-        </li>
-        <li>
-          <img src="../static/images/weight-scale.png" alt="" srcset="">
-            <p>  <b> Maintaining a Healthy Weight:  </b> 
-                Maintaining a healthy body weight is important for reducing diabetes risk or keeping existing diabetes under control. If necessary, seek guidance from a dietitian or doctor to manage your weight.
-            </p>
-          </li>
-          <li>
-            <p>  <b>Avoiding Smoking and Alcohol:  </b> 
-                Smoking and excessive alcohol consumption can increase the risk of diabetes complications and make blood sugar control difficult. Therefore, avoid smoking and limit alcohol consumption if possible.
-            </p>
-            <img src="../static/images/no-smoking.png" alt="" srcset="">
-          </li>
-          <li>
-            <img src="../static/images/mental-health.png" alt="" srcset="">
-            <p>  <b>Managing Stress: </b> 
-                Stress can elevate blood sugar levels. Try stress-reducing techniques such as relaxation techniques, deep breathing exercises, yoga, or meditation.
-            </p>
-          </li>
-          <li>
-            <p>  <b> Regular Health Check-ups:  </b> 
-                Regularly consult with your doctor to monitor your health status related to diabetes. Eye exams, foot care, and other routine check-ups can help detect diabetes-related complications early.
-            </p>
-            <img src="../static/images/medical-report.png" alt="" srcset="">
-          </li>
-                
+ 
+    </div>
+    <script>
+    
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+    
+        var prediction = getParameterByName('prediction');
+        document.getElementById('prediction').innerText = prediction;
 
 
+        var name = getParameterByName('name');
+        var gender = getParameterByName('gender');
 
-        </ul>
-     <h3>
+        if (gender === 'male') {
+            document.getElementById('greeting').innerText = 'Hello Mr. ' + name;
+        } else if (gender === 'female') {
+            document.getElementById('greeting').innerText = 'Hello Ms. ' + name;
+        } else {
+            document.getElementById('greeting').innerText = 'Hello ' + name;
+        }
+//hello
+        // Get prediction from URL parameter
+var prediction = getParameterByName('prediction');
+console.log('Prediction:', prediction);
 
-       Implementing these measures can help you manage diabetes and lead a healthy life. However, since individual needs vary, it's important to follow your doctor's recommendations and prescriptions.
-     </h3>
-            
-        
-        </div>
+// Get name and gender from URL parameters
+var name = getParameterByName('name');
+var gender = getParameterByName('gender');
+console.log('Name:', name);
+console.log('Gender:', gender);
+
+    </script>
 </body>
 </html>
+
