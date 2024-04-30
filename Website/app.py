@@ -177,11 +177,9 @@ def predict_image(image_array):
         image_tensor = image_tensor.permute(2, 0, 1).unsqueeze(0).to(device)
         output = torch.sigmoid(model(image_tensor))
 
-        print(output)
-        prediction = torch.round(output)  # Round to 0 or 1
-    
-    # Here, you would return the class label or any other relevant information based on your model's output
-    return prediction.item()
+        prediction_percentage = torch.round(output * 100 * 10) / 10
+
+    return round(prediction_percentage.item(),1)
 
 
 # Define route for home page
